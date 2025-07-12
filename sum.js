@@ -43,7 +43,6 @@ export function caesarCipher(string, shift) {
             output += letter
         }
     }
-    console.log('A'.codePointAt(0))
     return output
 }
 
@@ -53,4 +52,13 @@ function isUpperCase(character) {
 
 function isAlphabet(character) {
   return /^[a-zA-Z]$/.test(character);
+}
+
+export function analyseArray(array) {
+    let output = {}
+    output.average = array.reduce((acc, num) => acc + num, 0) / array.length
+    output.min = Math.min(...array)
+    output.max = Math.max(...array)
+    output.length = array.length
+    return output
 }
