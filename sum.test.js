@@ -1,4 +1,4 @@
-import { sum, capitalise, reverseString, calculator } from './sum.js'
+import { sum, capitalise, reverseString, calculator, caesarCipher } from './sum.js'
 
 test('Sum', () => 
     expect(sum(1, 2)).toBe(3)
@@ -17,4 +17,8 @@ test('Calculator', () => {
     expect(calculator.subtract(6, 2)).toBe(4)
     expect(calculator.divide(6, 2)).toBe(3)
     expect(calculator.multiply(6, 2)).toBe(12)
+})
+
+test('Caesar Cipher', () => {
+    expect(caesarCipher('abc', 3)).toBe('def')
 })

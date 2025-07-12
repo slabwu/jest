@@ -20,3 +20,11 @@ export let calculator = {
     divide: (a, b) => a / b,
     multiply: (a, b) => a * b
 }
+
+export function caesarCipher(string, shift) {
+    let output = ''
+    for (let i = 0; i < string.length; i++) {
+        output += String.fromCodePoint(string.codePointAt(i) + shift)
+    }
+    return output
+}
