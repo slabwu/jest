@@ -23,8 +23,17 @@ export let calculator = {
 
 export function caesarCipher(string, shift) {
     let output = ''
+    let ALPHABET = 26
+    let LOWER_A = 97
+
     for (let i = 0; i < string.length; i++) {
-        output += String.fromCodePoint(string.codePointAt(i) + shift)
+        let codePoint = string.codePointAt(i)
+        if (codePoint >= LOWER_A + (ALPHABET - shift)) {
+            output += String.fromCodePoint(codePoint + shift - ALPHABET)
+        } else {
+            output += String.fromCodePoint(codePoint + shift)
+        }
     }
+    console.log('a'.codePointAt(0))
     return output
 }
