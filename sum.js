@@ -25,15 +25,18 @@ export function caesarCipher(string, shift) {
     let output = ''
     let ALPHABET = 26
     let LOWER_A = 97
+    let UPPER_A = 65
+    let offset
 
     for (let i = 0; i < string.length; i++) {
         let codePoint = string.codePointAt(i)
-        if (codePoint >= LOWER_A + (ALPHABET - shift)) {
+        offset = (string[i] === string[i].toUpperCase())? 65 : 97
+        if (codePoint >= offset + (ALPHABET - shift)) {
             output += String.fromCodePoint(codePoint + shift - ALPHABET)
         } else {
             output += String.fromCodePoint(codePoint + shift)
         }
     }
-    console.log('a'.codePointAt(0))
+    console.log('A'.codePointAt(0))
     return output
 }

@@ -22,4 +22,6 @@ test('Calculator', () => {
 test('Caesar Cipher', () => {
     expect(caesarCipher('abc', 3)).toBe('def')
     expect(caesarCipher('xyz', 3)).toBe('abc')
+    expect(caesarCipher('HeLLo', 3)).toBe('KhOOr')
+    expect(caesarCipher('gOOdbYe', 3)).toBe('jRRgeBh')
 })
