@@ -30,13 +30,27 @@ export function caesarCipher(string, shift) {
 
     for (let i = 0; i < string.length; i++) {
         let codePoint = string.codePointAt(i)
-        offset = (string[i] === string[i].toUpperCase())? 65 : 97
-        if (codePoint >= offset + (ALPHABET - shift)) {
-            output += String.fromCodePoint(codePoint + shift - ALPHABET)
+        let letter = string[i]
+
+        if (isAlphabet(letter)) {
+            offset = (isUpperCase(string[i]))? 65 : 97
+            if (codePoint >= offset + (ALPHABET - shift)) {
+                output += String.fromCodePoint(codePoint + shift - ALPHABET)
+            } else {
+                output += String.fromCodePoint(codePoint + shift)
+            }
         } else {
-            output += String.fromCodePoint(codePoint + shift)
+            output += letter
         }
     }
     console.log('A'.codePointAt(0))
     return output
+}
+
+function isUpperCase(character) {
+  return character === character.toUpperCase();
+}
+
+function isAlphabet(character) {
+  return /^[a-zA-Z]$/.test(character);
 }
