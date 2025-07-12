@@ -1,4 +1,7 @@
-function sum(a, b) {
-    return a + b;
+export function sum(a, b) {
+    return a + b
 }
-module.exports = sum;
+
+export function capitalise(string) {
+    return string[0].toUpperCase() + string.slice(1)
+}
